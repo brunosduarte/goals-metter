@@ -6,7 +6,7 @@ Content-Type: application/json
 
 {
   "title":"Swim",
-  "desiredWeeklyFrequency": "teste"
+  "desiredWeeklyFrequency": 3
 }
 
 ### @queue
