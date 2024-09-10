@@ -1,1 +1,1 @@
-# goals-metter
+# goals-metter api

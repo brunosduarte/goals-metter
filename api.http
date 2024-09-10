@@ -14,7 +14,7 @@ POST {{baseUrl}}/completions
 Content-Type: application/json
 
 {
-  "goalId":"ap5dw0tbdv0xbvt4t92ocowd"
+  "goalId":"xc8a0w4xq1l1e8ajtfcoh26p"
 }
 
 ### @pending-goals

@@ -1,7 +1,6 @@
 {
-  "name": "api",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "goal-metter-api",
+  "version": "0.1.0",
   "scripts": {
     "start": "node ./dist/http/server.js",
     "dev": "tsx watch --env-file .env ./src/http/server.ts",
