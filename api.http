@@ -1,6 +1,6 @@
 @baseUrl = http://localhost:3333
 
-### Goals
+### Goals POST
 POST {{baseUrl}}/goals
 Content-Type: application/json
 
@@ -9,8 +9,8 @@ Content-Type: application/json
   "desiredWeeklyFrequency": 3
 }
 
-### @queue
+### @goals
 GET {{baseUrl}}/goals
 
-### @/nodes/:url
-GET {{baseUrl}}/nodes/:url
+### @pending-goals
+GET {{baseUrl}}/pending-goals
