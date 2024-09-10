@@ -1,0 +1,16 @@
+@baseUrl = http://localhost:3333
+
+### Goals
+POST {{baseUrl}}/goals
+Content-Type: application/json
+
+{
+  "title":"Swim",
+  "desiredWeeklyFrequency": "teste"
+}
+
+### @queue
+GET {{baseUrl}}/goals
+
+### @/nodes/:url
+GET {{baseUrl}}/nodes/:url
