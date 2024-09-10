@@ -17,8 +17,8 @@ Content-Type: application/json
   "goalId":"ap5dw0tbdv0xbvt4t92ocowd"
 }
 
-### @summary
-GET {{baseUrl}}/summary
-
 ### @pending-goals
 GET {{baseUrl}}/pending-goals
+
+### @summary
+GET {{baseUrl}}/summary
