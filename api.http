@@ -9,6 +9,14 @@ Content-Type: application/json
   "desiredWeeklyFrequency": 3
 }
 
+### Completions POST
+POST {{baseUrl}}/completions
+Content-Type: application/json
+
+{
+  "goalId":"iuz8vakecidlat2vagjy2jro"
+}
+
 ### @goals
 GET {{baseUrl}}/goals
 
