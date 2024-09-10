@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "_version": "20.1.0",
+  "_version": "22.0.0",
 
   "compilerOptions": {
     "lib": ["es2023"],
@@ -10,6 +10,12 @@
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "moduleResolution": "node16"
+    "moduleResolution": "node16",
+
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
   }
 }
