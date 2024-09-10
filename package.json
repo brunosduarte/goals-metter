@@ -1,5 +1,5 @@
 {
-  "name": "goal-metter-api",
+  "name": "goal-meter-api",
   "version": "0.1.0",
   "scripts": {
     "start": "node ./dist/http/server.js",
