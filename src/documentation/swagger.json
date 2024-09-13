@@ -1,0 +1,191 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Goals Keeper API",
+    "version": "1.0.0",
+    "description": ""
+  },
+  "paths": {
+    "/goals": {
+      "post": {
+        "summary": "Create a new goal",
+        "description": "Cria uma nova meta com título e frequência semanal desejada.",
+        "tags": ["goals"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "example": "Não usar o celular de noite"
+                  },
+                  "desiredWeeklyFrequency": {
+                    "type": "integer",
+                    "example": 3
+                  }
+                },
+                "required": ["title", "desiredWeeklyFrequency"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Goal created successfully."
+          }
+        }
+      }
+    },
+    "/pending-goals": {
+      "get": {
+        "summary": "Get week pending goals",
+        "description": "Retorna todas as metas pendentes para a semana atual.",
+        "tags": ["goals"],
+        "responses": {
+          "200": {
+            "description": "Lista de metas pendentes.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "pendingGoals": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "example": "j1yp51iawtl887scye9yt6uv"
+                          },
+                          "title": {
+                            "type": "string",
+                            "example": "Nadar"
+                          },
+                          "desiredWeeklyFrequency": {
+                            "type": "integer",
+                            "example": 4
+                          },
+                          "completionCount": {
+                            "type": "integer",
+                            "example": 4
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/completions": {
+      "post": {
+        "summary": "Create a goal completion",
+        "description": "Cria uma nova conclusão de meta associada a um goalId.",
+        "tags": ["goals"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "goalId": {
+                    "type": "string",
+                    "example": "m9ebnuks4ibrelk5au5gkecj"
+                  }
+                },
+                "required": ["goalId"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Goal completion created successfully."
+          }
+        }
+      }
+    },
+    "/summary": {
+      "get": {
+        "summary": "Get week summary",
+        "description": "Retorna um resumo semanal das metas concluídas e o progresso diário.",
+        "tags": ["goals"],
+        "responses": {
+          "200": {
+            "description": "Resumo semanal das metas.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "summary": {
+                      "type": "object",
+                      "properties": {
+                        "completed": {
+                          "type": "integer",
+                          "example": 5
+                        },
+                        "total": {
+                          "type": "integer",
+                          "example": 7
+                        },
+                        "goalsPerDay": {
+                          "type": "object",
+                          "additionalProperties": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string",
+                                  "example": "ej7n1y38m1daxvyo8gtg5ee3"
+                                },
+                                "title": {
+                                  "type": "string",
+                                  "example": "Praticar exercício"
+                                },
+                                "completedAt": {
+                                  "type": "string",
+                                  "format": "date-time",
+                                  "example": "2024-09-12T20:10:11.068815+00:00"
+                                }
+                              }
+                            }
+                          },
+                          "example": {
+                            "2024-09-12": [
+                              {
+                                "id": "ej7n1y38m1daxvyo8gtg5ee3",
+                                "title": "Praticar exercício",
+                                "completedAt": "2024-09-12T20:10:11.068815+00:00"
+                              }
+                            ],
+                            "2024-09-11": [
+                              {
+                                "id": "wj5ike2kt16mhpn6tnjoedtu",
+                                "title": "Nadar",
+                                "completedAt": "2024-09-11T20:13:56.724002+00:00"
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
